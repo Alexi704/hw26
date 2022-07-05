@@ -1,0 +1,114 @@
+### POST запрос на авторизацию, с получением access_token и refresh_token
+POST http://127.0.0.1:5000/auth/login
+Content-Type: application/json
+
+{
+    "name" : "Anna",
+    "password" : "12345"
+}
+
+### GET запрос по фильмам (с пагинацией и сортировкой)
+GET http://127.0.0.1:5000/movies/?status=new&page=2
+Content-Type: application/json
+Authorization:  Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiQW5uYSIsImV4cCI6MTY1NTk4MDYxOCwicmVmcmVzaF90b2tlbiI6ZmFsc2V9.EJRXiUiinapbjNm7T1GwFkwwSWmk_nhU9K3qVJtbW7A
+
+### GET запрос по фильмам (с сортировкой)
+GET http://127.0.0.1:5000/movies/?status=new
+Content-Type: application/json
+Authorization:  Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiQW5uYSIsImV4cCI6MTY1MjU0NTE0OCwicmVmcmVzaF90b2tlbiI6ZmFsc2V9.3ocu1NaZhktm45paxgKH7j-8zqSOphuxfub_DlS4ryM
+
+
+### GET запрос по режиссерам (с пагинацией)
+GET http://127.0.0.1:5000/directors/?page=2
+Content-Type: application/json
+
+
+### GET запрос по жанрам (с пагинацией)
+GET http://127.0.0.1:5000/genres/?page=2
+Content-Type: application/json
+
+
+### GET запрос по пользователям
+GET http://127.0.0.1:5000/users/
+Content-Type: application/json
+
+
+### POST запрос на добавление пользователя
+POST http://127.0.0.1:5000/auth/register
+Content-Type: application/json
+
+{
+    "email" : "email8@email.ru",
+    "password" : "12345",
+    "name" : "Repper",
+    "surname" : "Repper",
+    "favorite_genre_id": 1
+}
+
+
+### POST запрос на авторизацию, с получением access_token и refresh_token
+POST http://127.0.0.1:5000/auth/login
+Content-Type: application/json
+
+{
+    "name" : "Sony",
+    "password" : "12345"
+}
+
+
+### PUT запрос на смену токена
+###  1) подкидываем ДЕЙСВТУЮЩИЙ refresh_token,
+###  2) получаем новую пару access_token, refresh_token
+PUT http://127.0.0.1:5000/auth/login
+Content-Type: application/json
+
+{
+    "refresh_token": "здесь_должен_стоять_действующий_refresh_token"
+}
+
+
+### GET запрос данных пользователя
+GET http://127.0.0.1:5000/user/2
+Content-Type: application/json
+
+
+### PATCH запрос на частичное (либо полное) изменение данных (кроме пароля) пользователя (по его id)
+PATCH http://127.0.0.1:5000/user/1
+Content-Type: application/json
+
+{
+    "surname": "Toto",
+    "name": "Toto",
+    "favorite_genre_id": 3
+}
+
+
+### PATCH запрос на частичное (либо полное) изменение данных (кроме пароля) пользователя (по его id)
+PATCH http://127.0.0.1:5000/user/1
+Content-Type: application/json
+
+{
+    "email": "0000@email.ru",
+    "password": "12345",
+    "favorite_genre_id": 1,
+    "surname": "Uuuu",
+    "name": "Uuuu"
+}
+
+### PUT запрос изменение пароля (по id пользователя)
+PUT http://127.0.0.1:5000/user/password/2
+Content-Type: application/json
+
+{
+    "old_password": "12345",
+    "new_password": "00000"
+}
+
+### PUT запрос изменение пароля (по id пользователя)
+PUT http://127.0.0.1:5000/user/password/2
+Content-Type: application/json
+
+{
+    "old_password": "00000",
+    "new_password": "12345"
+}

@@ -1,0 +1,7 @@
+/include/
+/info/
+/lib/
+/Scripts/
+.dockerignore
+.gitignore
+pyvenv.cfg
