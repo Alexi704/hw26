@@ -7,5 +7,4 @@ venv/
 .*_cache/
 __pycache__
 .coverage
-Dockerfile
 pyvenv.cgg
