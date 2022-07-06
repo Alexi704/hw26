@@ -2,9 +2,9 @@ version: '3.3'
 
 services:
   web:
-    image: tuman8/flask_app_docker:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    image: tuman8/flask:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
-      - '80:80'
+      - '8080:80'
     restart: always
     depends_on:
       - db
