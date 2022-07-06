@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-    image: tuman8/flask
+    image: tuman8/flask_app_docker
     ports:
       - '80:80'
     restart: always
