@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   web:
-    image: tuman8/flask:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    image: tuman8/docker_cw4_flask:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
       - '8080:80'
     restart: always
