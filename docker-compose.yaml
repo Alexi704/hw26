@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-    image: tuman8/docker_cw4_flask
+    image: tuman8/flask
     ports:
       - '80:80'
     restart: always
