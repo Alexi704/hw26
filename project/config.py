@@ -29,5 +29,5 @@ class TestingConfig(BaseConfig):
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_ECHO = True
-    # SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(os.path.dirname(BASEDIR), "project.db")
-    SQLALCHEMY_DATABASE_URI = 'postgresql://db_user:db_password@db/db_name'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(os.path.dirname(BASEDIR), "project.db")
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://db_user:db_password@db/db_name'
