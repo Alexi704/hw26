@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-    image: tuman8/hw26
+    image: tuman8/my_flask
     ports:
       - '80:80'
     restart: always
